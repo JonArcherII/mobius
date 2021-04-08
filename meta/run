@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ISO_PATH=$(pwd)/image.iso
+
+qemu-system-i386 -d guest_errors -hda $ISO_PATH -debugcon stdio -m 128M --display none

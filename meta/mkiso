@@ -1,0 +1,8 @@
+#!/bin/sh
+
+KERNEL_PATH=$(pwd)/kernel/kernel.elf
+
+mkdir -p iso/boot/grub
+cp meta/grub.cfg iso/boot/grub/grub.cfg
+cp $KERNEL_PATH iso/boot/kernel.elf
+i386-elf-grub-mkrescue -o image.iso iso
